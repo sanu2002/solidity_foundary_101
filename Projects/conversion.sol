@@ -25,7 +25,7 @@ contract MinimumUSD {
            funder.push(address(msg.sender));
            avail[msg.sender ]= avail[msg.sender] + msg.value;
 
-    }
+    } 
 
 
 

@@ -10,9 +10,25 @@ contract MinimumUSD {
 
     uint minimumusd=5;
 
+    // msg.sender   Here i will make a array which contain a list of address which contain the address of the funded 
+    // account also we will map address with amount of funding 
+
+    address[] public  funder;
+    mapping (address funder => uint amount_funded ) public avail;
+
+
+
+
+
     function minmum_threshold() public payable{
            require(conversion(msg.value)>minimumusd,"you dont have sufficient value");
+           funder.push(address(msg.sender));
+           avail[msg.sender ]= avail[msg.sender] + msg.value;
+
     }
+
+
+
 
     constructor() {
         priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);

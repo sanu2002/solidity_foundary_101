@@ -1,3 +1,7 @@
+If you are not able to push your code into github and facing the public key error please do follow these steps :-
+
+
+
 It looks like you're encountering issues with SSH access to GitHub. Here are the steps to troubleshoot and fix the issue:
 
 1. Check if you have an SSH key:

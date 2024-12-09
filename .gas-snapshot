@@ -1,0 +1,4 @@
+Mytestfile:testFundgetVersion() (gas: 13566)
+Mytestfile:testMinimumuDollarisfive() (gas: 8777)
+Mytestfile:testmultiplewithdraw() (gas: 84829)
+Mytestfile:testmultiplewithdrawcheap() (gas: 84828)

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
-import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import {AggregatorV3Interface} from '@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol';
 import {Test, console} from 'lib/forge-std/src/Test.sol';
 // Why is this a library and not abstract?
 // Why not an interface?
@@ -21,7 +21,7 @@ library PriceConverter {
     // 1000000000
     function getConversionRate(uint256 ethAmount,AggregatorV3Interface priceFeed) internal view returns (uint256) {
         uint256 ethPrice = getPrice(priceFeed);
-        console.log(ethPrice);
+        // console.log(ethPrice);
 
         uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1000000000000000000;
         // the actual ETH/USD conversion rate, after adjusting the extra 0s.

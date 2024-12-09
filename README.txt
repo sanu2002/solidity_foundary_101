@@ -16,3 +16,5 @@ Quick-Node:-  https://www.quicknode.com/guides/ethereum-development/smart-contra
 
 
 
+//   Security Analysis With Slither
+// I generally use Foundry alongside other security tools when doing reviews of existing code bases. Slither is by no means a simple fix when it comes to smart contract security but it is useful and provides automated checks for things like reentrancy bugs. To use slither I run it from WSL (Windows subsystem for linux) and it can be installed with the following commands (note 0.8.13 is the current version of solc used in the foundry demo contract. Change this to whatever version you have set in the Solidity file):

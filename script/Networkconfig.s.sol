@@ -10,6 +10,10 @@ contract Networkconfiguration is Script {
 
     //Here i will add 3 function one is for eth sepoliaconfig and second one is eth mainnet config and third one is  anvil local env 
     // and also we will take care about current network configuration 
+    
+    struct Networkconfig{
+        address pricefeed;
+    }
 
     Networkconfig public current_network; //here we will save the current network configuration
     MockV3Aggregator mockPriceFeed;
@@ -17,10 +21,6 @@ contract Networkconfiguration is Script {
     uint8 public constant  decimals=8;
     int256 public constant initialAnswer=2000e8;
     
-
-    struct Networkconfig{
-        address pricefeed;
-    }
 
     constructor(){
         if(block.chainid==1115511){
@@ -71,7 +71,7 @@ contract Networkconfiguration is Script {
         
         vm.startBroadcast();
 
-         mockPriceFeed = new MockV3Aggregator(decimals, initialAnswer);
+        mockPriceFeed = new MockV3Aggregator(decimals, initialAnswer);
         vm.stopBroadcast();
 
      

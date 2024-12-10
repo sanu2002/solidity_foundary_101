@@ -5,6 +5,9 @@
 
 build:;forge build 
 
+deploy:
+	forge script script/Funddeploy.s.sol --rpc-url $(Anvil_Network) --private-key $(Anvil_Private_Key)  --broadcast --verify --etherscan-api-key $(Ether_Scan_Api_Key)
+
 deploy-sepolia:;forge script script/Funddeploy.s.sol  --rpc-url $(SEPOLIA_RPC_URL) --private-key $(Private_Key)  --broadcast --verify --etherscan-api-key $(Ether_Scan_Api_Key) -vvvv
 
 test:; forge test 
